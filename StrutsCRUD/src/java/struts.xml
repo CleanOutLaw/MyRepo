@@ -1,0 +1,31 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+       
+        <action name="saveProduct" method="SaveProduct" class="Actions.ProductsActions">
+            <result name="success" type="redirect">allProducts</result>
+        </action>
+        
+        <action name="allProducts" method="AllProducts" class="Actions.ProductsActions">
+            <result name="success">home.jsp</result>
+        </action>
+        
+        <action name="deleteProduct" method="deleteProduct" class="Actions.ProductsActions">
+            <result name="success" type="redirect">allProducts</result>
+        </action>
+        
+        <action name="editProduct" method="editProduct" class="Actions.ProductsActions">
+            <result name="success">updateProduct.jsp</result>
+        </action>
+        
+        <action name="saveEditProduct" method="saveEditProduct" class="Actions.ProductsActions">
+            <result name="success" type="redirect">allProducts</result>
+        </action>
+       
+
+    </package>
+</struts>
